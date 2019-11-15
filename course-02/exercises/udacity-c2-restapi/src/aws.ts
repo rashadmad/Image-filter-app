@@ -1,5 +1,6 @@
 import AWS = require('aws-sdk');
 import { config } from './config/config';
+require('dotenv').config();
 
 const c = config.dev;
 
