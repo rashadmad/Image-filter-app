@@ -19,6 +19,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   // IT SHOULD
   //    1
   //    1. validate the image_url query
+  const imageUrl:string = "hi";
   //    2. call filterImageFromURL(image_url) to filter the image
   //    3. send the resulting file in the response
   //    4. deletes any files on the server on finish of the response
@@ -34,7 +35,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   // Root Endpoint
   // Displays a simple message to the user
   app.get( "/", async ( req, res ) => {
-    res.send("try GET /filteredimage?image_url={{}}")
+    res.send(`try GET /filteredimage?image_url=${imageUrl}`)
   } );
   
 
