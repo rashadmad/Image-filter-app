@@ -19,7 +19,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   // IT SHOULD
   //    1
   //    1. validate the imageUrl query
-  let image = app.get( "/filteredimage/", ( req, res ) => {
+  let image: string = app.get( "/filteredimage/", ( req, res ) => {
 
     let { imageUrl } = req.query;
       if (!imageUrl){
@@ -28,7 +28,6 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       return res.status(200).send(`image recieved ${imageUrl}`);
 
   });
-
   //    2. call filterImageFromURL(image_url) to filter the image
   //    3. send the resulting file in the response
   //    4. deletes any files on the server on finish of the response
@@ -44,7 +43,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   // Root Endpoint
   // Displays a simple message to the user
   app.get( "/", async ( req, res ) => {
-    res.send("try GET /filteredimage?image_url={{imageUrl}}")
+    res.send("try GET /filteredimage?image_url={{image}}")
   } );
   
 
