@@ -1,11 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
-import { urlReceived }from './test/test';
-
-import { expect } from 'chai'
-import 'mocha';
-
 
 (async () => {
 
@@ -25,7 +20,7 @@ import 'mocha';
   //    1
   //    1. validate the imageUrl query
   let image: string = app.get( "/filteredimage/", ( req, res ) => {
-
+  
     let { imageUrl } = req.query;
       if (!imageUrl){
         return res.status(400).send("name required")
@@ -33,6 +28,9 @@ import 'mocha';
       return res.status(200).send(`image recieved ${imageUrl}`);
 
   });
+
+
+
   //    2. call filterImageFromURL(image_url) to filter the image
   //    3. send the resulting file in the response
   //    4. deletes any files on the server on finish of the response
