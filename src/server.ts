@@ -23,7 +23,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   //    1. validate the imageUrl query
     const { imageUrl } = req.query;
       if (!imageUrl){
-        return res.status(200).send("name required")
+        return res.status(400).send("name required");
       }
       try{
   //    3. send the resulting file in the response
@@ -49,7 +49,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   // Root Endpoint
   // Displays a simple message to the user
   app.get( "/", async ( req, res ) => {
-    res.send("try GET /filteredimage?image_url={{image}}")
+    res.send("try GET /filteredimage?imageUrl={{image}}")
   } );
   
 

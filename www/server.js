@@ -51,7 +51,7 @@ const util_1 = require("./util/util");
     // Root Endpoint
     // Displays a simple message to the user
     app.get("/", (req, res) => __awaiter(this, void 0, void 0, function* () {
-        res.send("try GET /filteredimage?image_url={{image}}");
+        res.send("try GET /filteredimage?imageUrl={{image}}");
     }));
     // Start the Server
     app.listen(port, () => {
