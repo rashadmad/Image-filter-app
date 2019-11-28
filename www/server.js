@@ -28,9 +28,9 @@ const util_1 = require("./util/util");
     //    1
     app.get("/filteredimage/", (req, res) => __awaiter(this, void 0, void 0, function* () {
         //    1. validate the imageUrl query
-        const { imageUrl } = req.query;
+        let imageUrl = req.query.imageUrl;
         if (!imageUrl) {
-            return res.status(400).send("name required");
+            return res.status(200).send("name required");
         }
         try {
             //    3. send the resulting file in the response
